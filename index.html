@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventurers - Let yourself be impressed</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                  url('images/bgog.webp') center/cover;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(5px);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 400;
+      color: white;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+    }
+
+    .nav-menu a:hover {
+      opacity: 1;
+      font-weight: 700;
+    }
+
+    .signup-btn {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .signup-btn:hover {
+      background: white;
+      color: #333;
+    }
+
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      line-height: 1.1;
+    }
+
+    .hero-cta {
+      background: white;
+      color: #333;
+      padding: 15px 45px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .hero-cta:hover {
+      transform: scale(1.05);
+      background: #f0f0f0;
+    }
+
+    /* Power of Impressions Section */
+    .impressions-section {
+      padding: 100px 50px;
+      text-align: center;
+      background: white;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .impressions-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.3;
+      letter-spacing: 1px;
+    }
+
+    .impressions-text {
+      font-size: 16px;
+      color: #666;
+      max-width: 750px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* Offer Section */
+    .offer-section {
+      padding: 100px 50px;
+      background: #fdfdfd;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #333;
+      margin-bottom: 80px;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .offer-card {
+      display: flex;
+      flex-direction: column; 
+      gap: 20px;
+    }
+
+    .offer-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .offer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #333;
+      margin: 15px 0 10px;
+    }
+
+    .offer-text {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .offer-btn {
+      align-self: flex-start;
+      background: #8fb8a0; 
+      color: white;
+      border: none;
+      padding: 12px 35px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .offer-btn:hover {
+      background: #7aa38b;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 100px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #333;
+      margin-bottom: 60px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 300px;
+      gap: 15px;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .gallery-image:nth-child(1) {
+      grid-row: span 2;
+      grid-column: span 1;
+    }
+
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      padding: 60px 50px;
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <nav class="top-nav">
+      <div class="logo">Extreme</div>
+      <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="offers.html">OFFER</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="feedback.html">FEEDBACK</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="signup.html" class="signup-btn">SIGN UP</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <p class="hero-subtitle">Adventurers</p>
+      <h1 class="hero-title">Let yourself be impressed</h1>
+      
+      <a href="contact.html" class="hero-cta">GET STARTED</a>
+    </div>
+  </section>
+
+  <section class="impressions-section">
+    <h2 class="impressions-title">POWER OF IMPRESSIONS GUARANTEED FEEL EXTREMELY</h2>
+    <p class="impressions-text">
+      Curabitur sit amet purus semper tortor tempor lacinia eu in tortor. Integer nisl risus, condimentum sed lacinia in. Praesent finibus mollis blandit.
+    </p>
+  </section>
+
+  <section class="offer-section">
+    <h2 class="section-title">Our Offers</h2>
+
+    <div class="offer-grid">
+      <div class="offer-card">
+        <img src="images/offer_rockclimbing.jpg" class="offer-image" alt="Rock Climbing">
+        <h3 class="offer-title">Rock Climbing</h3>
+        <p class="offer-text">Curabitur sit amet feugiat ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="signup.html" class="offer-btn" style="display:inline-block; text-align:center;">SIGN UP</a>
+      </div>
+
+      <div class="offer-card">
+        <img src="images/offer_offroad.webp" class="offer-image" alt="Extreme Offroad">
+        <h3 class="offer-title">Extreme Offroad</h3>
+        <p class="offer-text">Curabitur sit amet feugiat ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="signup.html" class="offer-btn" style="display:inline-block; text-align:center;">SIGN UP</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <h2 class="gallery-title">Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images/Gallery1.webp" class="gallery-image">
+      <img src="images/Gallery2.webp" class="gallery-image">
+      <img src="images/Gallery3.webp" class="gallery-image">
+      <img src="images/Gallery4.webp" class="gallery-image">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 EXTREME ADVENTURES. ALL RIGHTS RESERVED.</p>
+  </footer>
+
+</body>
+</html>

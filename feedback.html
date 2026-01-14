@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - Extreme</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #fff;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .logo-text {
+      font-weight: 400;
+      letter-spacing: 5px;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .signup-nav-btn {
+      border: 1px solid #333;
+      padding: 8px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    /* ---------- FEEDBACK FORM SECTION ---------- */
+    .feedback-container {
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 40px;
+      background: #fff;
+      /* Signature Green Shadow */
+      box-shadow: 15px 15px 0px #8fb8a0;
+      border: 1px solid #eee;
+      border-radius: 4px;
+    }
+
+    .feedback-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .feedback-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .save-btn {
+      width: 100%;
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 2px;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .save-btn:hover {
+      background: #8fb8a0;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #222;
+      padding: 40px;
+      color: white;
+      text-align: center;
+      margin-top: 100px;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="logo-container">
+      <div class="logo-text">EXTREME</div>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="offers.html">OFFER</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="feedback.html" style="font-weight: 700;">FEEDBACK</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="signup.html" class="signup-nav-btn">SIGN UP</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="feedback-container">
+      <div class="feedback-header">
+        <h1>Feedback</h1>
+        <p>Tell us about your adventure.</p>
+      </div>
+
+      <form id="feedbackForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="rating">Experience Rating</label>
+          <select id="rating">
+            <option value="Excellent">Excellent - Heart Pounding!</option>
+            <option value="Good">Good - Very Thrilling</option>
+            <option value="Average">Average - Decent Trip</option>
+            <option value="Poor">Poor - Not Extreme Enough</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="How was your experience?" required></textarea>
+        </div>
+
+        <button type="button" class="save-btn" onclick="downloadFeedback()">SAVE FEEDBACK</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Extreme Adventure Travel — All rights reserved</p>
+  </footer>
+
+  <script>
+    function downloadFeedback() {
+      // 1. Get values from the form
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const rating = document.getElementById('rating').value;
+      const message = document.getElementById('message').value;
+
+      // Check if fields are filled
+      if(!name || !email || !message) {
+        alert("Please fill out all fields before saving.");
+        return;
+      }
+
+      // 2. Create the file content string
+      const fileContent = `
+        EXTREME ADVENTURE FEEDBACK
+        ---------------------------
+        Date: ${new Date().toLocaleString()}
+        Name: ${name}
+        Email: ${email}
+        Rating: ${rating}
+        Message: ${message}
+        ---------------------------
+      `;
+
+      // 3. Create a "Blob" (the file data)
+      const blob = new Blob([fileContent], { type: 'text/plain' });
+
+      // 4. Create a temporary download link
+      const link = document.createElement('a');
+      link.download = `Feedback_${name.replace(/\s+/g, '_')}.txt`; // Filename
+      link.href = window.URL.createObjectURL(blob);
+
+      // 5. Trigger the download and clean up
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      alert("Feedback saved! Check your downloads folder.");
+    }
+  </script>
+
+</body>
+</html>

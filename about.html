@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Extreme</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #fff;
+      border-bottom: 1px solid #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-weight: 400;
+      letter-spacing: 5px;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .signup-nav-btn {
+      border: 1px solid #333;
+      padding: 8px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .signup-nav-btn:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    /* ---------- ABOUT HERO ---------- */
+    .about-hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background-color: #b0d3f3;
+    }
+
+    .about-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 58px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .about-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      display: flex;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 25px;
+      color: #222;
+    }
+
+    .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: -20px 20px 0px #8fb8a0; /* Green shadow on the left side */
+    }
+
+    /* ---------- VALUES GRID ---------- */
+    .values-container {
+      background-color: #f9f9f9;
+      padding: 100px 50px;
+      text-align: center;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 50px auto 0;
+    }
+
+    .value-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .value-card p {
+      font-size: 15px;
+      color: #666;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #222;
+      padding: 60px;
+      color: white;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="logo-container">
+      <div class="logo-text">EXTREME</div>
+    </div>
+
+    <ul class="nav-menu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="offers.html">OFFER</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="feedback.html">FEEDBACK</a></li>
+      <li><a href="about.html" style="font-weight: 700;">ABOUT US</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="signup.html" class="signup-nav-btn">SIGN UP</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <h1>Our Story</h1>
+      <p style="max-width: 600px; margin: 0 auto;">Pushing boundaries and exploring the unknown since 2010.</p>
+    </section>
+
+    <section class="about-section">
+      <div class="about-text">
+        <h2>We Live for the Thrill</h2>
+        <p>Extreme Adventures was founded by a group of mountain climbers and off-road enthusiasts who wanted to share the raw power of nature with the world. We believe that life begins at the end of your comfort zone.</p>
+        <p>Curabitur sit amet purus semper tortor tempor lacinia eu in tortor. Integer nisl risus, condimentum sed lacinia in, tincidunt eget mi. Praesent finibus mollis blandit.</p>
+      </div>
+      <div class="about-image">
+        <img src="images/about-team.jpg" alt="Our Team in the Mountains">
+      </div>
+    </section>
+
+    <section class="values-container">
+      <h2 style="font-family: 'Playfair Display'; font-size: 42px;">Why Choose Us?</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Expert Guides</h3>
+          <p>Every member of our team is a certified professional with years of field experience.</p>
+        </div>
+        <div class="value-card">
+          <h3>Safety First</h3>
+          <p>We use top-of-the-line equipment and maintain strict safety protocols for every trip.</p>
+        </div>
+        <div class="value-card">
+          <h3>Pure Adventure</h3>
+          <p>We don't do tourist traps. We take you to the most authentic, rugged locations on Earth.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Extreme Adventure Travel — All rights reserved</p>
+  </footer>
+
+</body>
+</html>
